@@ -5,7 +5,7 @@ from scipy.sparse import lil_matrix
 import time
 import numpy as np
 
-df = pd.read_csv('transactions_full.csv',encoding = "ISO-8859-1")
+df = pd.read_csv('data/transactions_full.csv',encoding = "ISO-8859-1")
 
 uniq_stock = list(df.StockCode.unique())
 uniq_stock.sort()
