@@ -1,8 +1,13 @@
+# set the unkonwn CustomerIDs to 'Anonymous N'
+# and save the new csv file as 'transactions_full.csv'
+
 import pandas as pd
 
 df = pd.read_csv('transactions.csv',encoding = "ISO-8859-1")
 df.sort_values('InvoiceNo')
 df[['StockCode','CustomerID']] = df[['StockCode','CustomerID']].astype(str)
+
+
 i = 1
 for index,row in df.iterrows():
     if row.CustomerID == 'nan':
