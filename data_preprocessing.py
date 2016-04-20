@@ -3,7 +3,7 @@
 
 import pandas as pd
 
-df = pd.read_csv('data/transactions.csv',encoding = "ISO-8859-1")
+df = pd.read_csv('../data/transactions.csv',encoding = "ISO-8859-1")
 df.sort_values('InvoiceNo')
 df[['StockCode','CustomerID']] = df[['StockCode','CustomerID']].astype(str)
 
@@ -18,4 +18,4 @@ for index,row in df.iterrows():
             df.set_value(index,'CustomerID','Anonymous' + str(i))
 print (i-1) + 'anonymous customers are added.'    
 
-df.to_csv('data/transactions_full.csv',index= False)
+df.to_csv('../data/transactions_full.csv',index= False)
